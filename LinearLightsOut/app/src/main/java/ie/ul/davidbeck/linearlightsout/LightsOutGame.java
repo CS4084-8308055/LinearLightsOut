@@ -13,6 +13,7 @@ public class LightsOutGame {
     private static final int RANDOMIZER_MULTIPLIER = 10;
     private int[] mButtonValues;
     private int mNumPresses;
+    private int mNumButtons;
     private boolean mDoingSetup;
 
     /**
@@ -32,6 +33,7 @@ public class LightsOutGame {
             // CONSIDER: Throw an exception.  For now just enforce the minimum.
             numButtons = MIN_NUM_BUTTONS;
         }
+        setNumButtons(numButtons);
         mDoingSetup = true;
         mButtonValues = new int[numButtons];
         randomizeButtons();
@@ -141,6 +143,12 @@ public class LightsOutGame {
         mNumPresses = numPresses;
     }
 
+    public void setNumButtons(int buttons){
+        mNumButtons = buttons;
+    }
+    public int getNumButtons(){
+        return mNumButtons;
+    }
 
     @Override
     public String toString() {
